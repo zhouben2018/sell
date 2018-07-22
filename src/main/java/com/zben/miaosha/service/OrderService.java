@@ -24,7 +24,7 @@ public class OrderService {
         return orderDao.getMiaoshaOrderByUserIdGoodsId(userId, goodsId);
     }
 
-
+    //卖超问题， 可以user_id goods_id加唯一索引 ， 减库存的时候加一个判断 goods_stock > 0
     public OrderInfo createOrder(MiaoshaUser user, GoodsVo goods) {
         //下订单
         OrderInfo orderInfo = new OrderInfo();
@@ -44,5 +44,9 @@ public class OrderService {
                 .build();
         orderDao.insertMiaoshaOrder(miaoshaOrder);
         return orderInfo;
+    }
+
+    public OrderInfo getOrderById(long orderId) {
+        return orderDao.getOrderById(orderId);
     }
 }

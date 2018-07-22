@@ -18,4 +18,5 @@ public class MiaoshaUserKey extends BasePrefix {
 
 
     public static MiaoshaUserKey getByToken = new MiaoshaUserKey(COOKIE_EXPIRED, "tk");
+    public static MiaoshaUserKey getById = new MiaoshaUserKey("tk");
 }
